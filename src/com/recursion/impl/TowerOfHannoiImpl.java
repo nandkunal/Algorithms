@@ -11,7 +11,7 @@ public class TowerOfHannoiImpl implements TowerOfHannoi {
 	}
 
 	@Override
-	public int getCountOfMinimumMovements(int n) {
+	public int getCountOfMinimumMovements(int n) {    
 		return calculateMinimumMovements(n);
 	}
 	
@@ -31,6 +31,20 @@ public class TowerOfHannoiImpl implements TowerOfHannoi {
 			return 1;
 		}
 		return 2*calculateMinimumMovements(n-1)+1;
+	}
+
+	@Override
+	public void displayTowerOfHannoiMovements(int n, char src, char target,char aux) {
+		
+		displayDiscNos(n, src, target, aux);
+	}
+	
+	private void displayDiscNos(int n, char src, char target,char aux){
+		if(n<=0)
+			return;
+		displayDiscNos(n-1, src, aux, target);
+		System.out.println("Moving disc no. "+n+" from "+src+" --> "+target);
+		displayDiscNos(n-1, aux, target, src);
 	}
 
 }

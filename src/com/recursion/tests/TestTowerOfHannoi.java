@@ -31,5 +31,16 @@ public class TestTowerOfHannoi {
 		//System.out.println(obj.getCountOfMinimumMovements(n) );
 		assertEquals(7,obj.getCountOfMinimumMovements(n) );
 	}
+	
+	@Test
+	
+	public void testDiscDetailedMovement(){
+		int n = 3;
+		char src = 'A';
+		char aux='B';
+		char target = 'C';
+		TowerOfHannoi obj = new TowerOfHannoiImpl(); 
+		obj.displayTowerOfHannoiMovements(n, src, target, aux);
+	}
 
 }
